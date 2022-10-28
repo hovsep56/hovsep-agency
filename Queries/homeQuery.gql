@@ -1,0 +1,24 @@
+query Home {
+  page(id: "Page", idType: URI) {
+    homeFields {
+      description
+      title
+      picture {
+        uri
+      }
+      artists {
+        ... on Artist {
+          id
+          artistFields {
+            firstName
+            lastName
+          }
+        }
+      }
+      callToAction {
+        title
+        url
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+query Artist {
+  artists(first: 2) {
+    edges {
+      node {
+        artistFields {
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+query Artist ($slug: ID!){
+  artist(id: $slug, idType: SLUG) {
+    artistFields {
+      firstName
+      lastName
+      artistName
+      description
+      email
+      origin
+      phonenumber
+      height
+      shirtsize
+      shoeSize
+      profilePicture {
+        sourceUrl
+      }
+    }
+    roles {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+
+//query variables
+
+{
+  "slug": "Anna-Woznak" 
+}
