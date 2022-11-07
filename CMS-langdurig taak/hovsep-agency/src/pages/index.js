@@ -10,9 +10,14 @@ import * as styles from "../components/index.module.css"
 const IndexPage = () => {
   return (
     <main>
-      <title>Home Page</title>
-      <h1>Welcome to Inghelbrecht Agency!</h1>
+      <Layout pageTitle="Welcome to Hovsep Agency!">
+      <title>Welcome to Hovsep Agency!</title>
       <p>Lorem ipsum</p>
+      <StaticImage
+        alt="randomized unsplash image!"
+        src="https://image.api.playstation.com/vulcan/img/rnd/202010/0220/mEgt1tDiuDgwqMPCLIzM1gBD.jpg"
+      />
+      </Layout>
     </main>
   )
 }
