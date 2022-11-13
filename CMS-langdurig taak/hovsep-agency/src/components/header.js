@@ -1,8 +1,10 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Header = ({ siteTitle }) => (
+  
   <header
     style={{
       margin: `0 auto`,
