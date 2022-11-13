@@ -29,7 +29,6 @@ query MyQuery {
     }
   }
 }
-
 `
 
 export default ArtistsPage
