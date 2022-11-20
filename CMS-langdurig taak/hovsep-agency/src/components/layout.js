@@ -32,7 +32,6 @@ const Layout = ({ pageTitle,children }) => {
     <h1>{data.site.siteMetadata.title}</h1>
   </header>
   <ul className={navLinks}>
-
     <li className={navLinkItem}>
       <Link className={navLinkText} to="/">
         Home

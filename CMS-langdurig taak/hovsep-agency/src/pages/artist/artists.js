@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../../components/layout'
 
 const ArtistsPage = ({data: {allWpArtist: {edges}}}) => {
@@ -9,7 +9,8 @@ const ArtistsPage = ({data: {allWpArtist: {edges}}}) => {
       <p>list of artists</p>
       {edges.map((item) => {
         const artist = item.node.artistFields;
-        return <p key={item.node.id}>{artist.firstName} {artist.lastName}</p>
+        const slug = item.node.slug
+        return<Link to={`/artist/${slug}`}><p key={item.node.id}>{artist.firstName} {artist.lastName}</p></Link> 
       })}
     </Layout>
   )
@@ -21,6 +22,7 @@ query MyQuery {
     edges {
       node {
         id
+        slug
         artistFields {
           firstName
           lastName
