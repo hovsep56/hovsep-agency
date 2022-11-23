@@ -16,7 +16,7 @@ const ArtistsPage = ({data: {allWpArtist: {edges}}}) => {
   )
 }
 
-export const query = graphql`
+/*export const query = graphql`
 query MyQuery {
   allWpArtist {
     edges {
@@ -31,6 +31,6 @@ query MyQuery {
     }
   }
 }
-`
+`*/
 
 export default ArtistsPage

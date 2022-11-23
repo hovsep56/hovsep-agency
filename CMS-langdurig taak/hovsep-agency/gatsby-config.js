@@ -15,7 +15,7 @@ module.exports = {
         schema: {
           timeout: 120000,
         },
-        url: "http://smbatian-agency.local/graphql",
+        url: "http://topten.local/graphql"
       },
     },
   ],

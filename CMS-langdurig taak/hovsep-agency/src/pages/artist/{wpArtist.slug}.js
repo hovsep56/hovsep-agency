@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import { getImage,GatsbyImage } from 'gatsby-plugin-image'
 
-const ArtistPage = ({data: {wpArtist: {artistFields: artist}}}) => {
+/*const ArtistPage = ({data: {wpArtist: {artistFields: artist}}}) => {
   const image=getImage(artist.profilePicture.localFile)
   return (
     <Layout pageTitle="Artiesten Template">
@@ -21,9 +21,9 @@ const ArtistPage = ({data: {wpArtist: {artistFields: artist}}}) => {
       </div>
     </Layout>
   )
-}
+}*/
 
-export const query = graphql`
+/*export const query = graphql`
   query ($slug: String) {
     wpArtist(slug: { eq: $slug }) {
       artistFields {
@@ -48,6 +48,6 @@ export const query = graphql`
       }
     }
   }
-`
+`*/
 
 export default ArtistPage
