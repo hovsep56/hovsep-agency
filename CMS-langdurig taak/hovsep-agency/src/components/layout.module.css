@@ -265,9 +265,8 @@ pre tt:after {
 .nav-links {
   display: flex;
   align-items: center;
-  height: 90px;
-  padding: 0;
-  margin: 0;
+  padding-top: 50px;
+  margin: auto;
   list-style: none;
 }
 .nav-link-text {
@@ -275,7 +274,6 @@ pre tt:after {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
 }
 .nav-link-text:hover {
   color: #37ba83;
