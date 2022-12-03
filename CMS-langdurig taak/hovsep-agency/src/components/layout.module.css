@@ -250,31 +250,30 @@ pre tt:after {
   margin-right: auto;
 }
 
+/*my css*/
 .nav-link-item {
   padding-left: 2rem;
 }
 .container {
-  width: 90%;
-  max-width: 1080px;
-  margin: auto;
+
   font-family: sans-serif;
+  align-items: center;
+  
 }
 .nav {
   display: flex;
 }
 .nav-links {
   display: flex;
-  align-items: center;
   padding-top: 50px;
   margin: auto;
   list-style: none;
 }
 .nav-link-text {
-  color: rgb(0, 0, 0);
+  color: black;
   text-transform: uppercase;
-  text-decoration: none;
   font-weight: 600;
 }
 .nav-link-text:hover {
-  color: #37ba83;
+  color: red;
 }

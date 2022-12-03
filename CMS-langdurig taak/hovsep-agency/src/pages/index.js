@@ -1,37 +1,53 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from 'react'
+import { useState } from 'react'
+import { graphql, Link } from 'gatsby'
+import Layout from '../components/layout'
+import { getImage,GatsbyImage } from 'gatsby-plugin-image'
+import { number } from 'prop-types'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
-
-const Navbar=()=>{
-  return(
-    <div>
-    </div>
-  )
-}
-
-const Mainpage =()=>{
-  return (
-    <body style={{backgroundImage: "url('https://image.api.playstation.com/vulcan/img/rnd/202010/0220/mEgt1tDiuDgwqMPCLIzM1gBD.jpg')", height:"100vh"}}>
-      <Layout pageTitle="Welcome to my Top Ten list!" >
-      
-      <p>Top Ten RPG games</p>
-      
-      </Layout>
-    </body>
-    
-  )
-}
-// Stap 2: definieer je component
-const IndexPage = () => {
-  return(
-    <Mainpage/>
-  )
+const Mainpage = ({data: {allWpGame: {edges}}}) => {
   
+  return (
+    <Layout >
+      <h1 style={{textAlign: 'center'}}>Welcome to my personal Top Ten RPG games</h1>
+      
+      <ul style={{listStyleType:"decimal", display:'flex',alignItems:'center',flexDirection: 'column'}}>
+      {edges.map((item) => {
+        const game = item.node.gameMeta;
+        const slug = item.node.slug
+        const image=getImage(game.picture.localFile)
+        return<li style={{paddingBottom:50, textAlign: 'center'}}><Link to={`/gamespages/${slug}`}><p key={item.node.id}> 
+          {game.title}</p></Link> 
+          <GatsbyImage image={image} alt={game.picture.altText} style={{width:150,height:150}} /> 
+        </li>
+      })}
+      </ul>
+    </Layout>
+  )
 }
-// Stap 3: Exporteer je component
-export default IndexPage
+
+export const query = graphql`
+{
+  allWpGame {
+    edges {
+      node {
+        id
+        slug
+        gameMeta {
+          title
+          picture {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+`
+
+export default Mainpage
