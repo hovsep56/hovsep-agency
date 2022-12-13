@@ -264,6 +264,7 @@ pre tt:after {
   display: flex;
 }
 .nav-links {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   padding-top: 50px;
   margin: auto;

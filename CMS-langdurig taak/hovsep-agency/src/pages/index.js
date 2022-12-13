@@ -18,7 +18,7 @@ const Mainpage = ({data: {allWpGame: {edges}}}) => {
         const image=getImage(game.picture.localFile)
         return<li style={{paddingBottom:50, textAlign: 'center'}}><Link to={`/gamespages/${slug}`}><p key={item.node.id}> 
           {game.title}</p></Link> 
-          <GatsbyImage image={image} alt={game.picture.altText} style={{width:150,height:150}} /> 
+          <GatsbyImage image={image} alt={game.picture.altText} style={{maxWidth: 150, maxWidth:150}} /> 
         </li>
       })}
       </ul>
