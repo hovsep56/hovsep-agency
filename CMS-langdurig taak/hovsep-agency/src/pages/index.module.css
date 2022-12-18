@@ -1,0 +1,19 @@
+.navlinktext{
+    color: black;
+}
+.navlinktext:hover{
+    color: red;
+}
+.liststyle{
+    margin: auto;
+    flex-direction: column;
+    flex: 1;
+    display: 'flex'; 
+    align-items: 'center'; 
+    flex-direction: 'column';
+    list-style-type: decimal;
+}
+.background{
+    background-color: lightgrey;
+    height: 100%;
+}

@@ -255,13 +255,13 @@ pre tt:after {
   padding-left: 2rem;
 }
 .container {
-
   font-family: sans-serif;
   align-items: center;
-  
+  background-color: lightgrey;
 }
 .nav {
   display: flex;
+  
 }
 .nav-links {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

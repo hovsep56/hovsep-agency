@@ -5,35 +5,42 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import { node } from 'prop-types'
 
 const ArtistPage = ({ data: { wpGame: { gameMeta: game } } }) => {
-const image = getImage(game.picture.localFile)
-var desciption = toString(game.desciption);
-var newdescription = desciption.replace("<p>", "")
+  const image = getImage(game.picture.localFile)
+  var desciption = toString(game.desciption);
+  var newdescription = desciption.replace("<p>", "")
   return (
+
     <Layout>
+      <div style={{backgroundColor: 'lightgrey',height:'100vh'}}>
       <div style={{ position: 'absolute', paddingLeft: 30 }}>
-        <div style={{ border: 'solid', borderColor: 'black',padding:10}}>
-          <ul style={{listStyle: 'none'}}>
-            <li>Age rating: {game.ageRating}</li>
-            <li>Development cost: {game.developmentCost}</li>
-            <li>development team: {game.developmentTeam}</li>
-            <li>Metacritic score: {game.metacriticScore}</li>
-            <li>Positives:</li>
-            <ul>
-              <li>{game.positives}</li>
-            </ul>
+        <div style={{ border: 'solid', borderColor: 'black', padding: 10 }}>
+          <h3 style={{textAlign: 'center',borderBottom: 'solid'}}> Extra details</h3>
+          <ul style={{ listStyle: 'none' }}>
+            <li><text style={{ fontWeight: 'bold' }}>Age rating:</text> {game.ageRating}</li>
+            <li><text style={{ fontWeight: 'bold' }}>Development cost:</text> {game.developmentCost}</li>
+            <li><text style={{ fontWeight: 'bold' }}>development team:</text>  {game.developmentTeam}</li>
+            <li><text style={{ fontWeight: 'bold' }}>Metacritic score:</text> {game.metacriticScore}</li>
+            <li><text style={{ fontWeight: 'bold', color: 'green' }}>Positives:</text></li>
+            <li>{game.positives}</li>
+            <li><text style={{ fontWeight: 'bold', color: 'red' }}>Negatives:</text></li>
+            <li>{game.negatives}</li>
           </ul>
+
 
         </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-        <h1>Game details </h1>
-        <h3>{game.title}</h3>
+        <h1 style={{ borderBottom: 'solid' }}>Game details </h1>
+        <h2>{game.title}</h2>
         <GatsbyImage image={image} alt={game.picture.altText} style={{ maxHeight: 300, maxWidth: 300 }} />
-        <h3>Description</h3>
-        <p style={{ paddingTop: 20 }}>{game.description}</p>
+        <h3 style={{ borderBottom: 'solid' }}>Description</h3>
+        <p style={{ paddingTop: 10 }}>{game.description}</p>
+        <h3 style={{ borderBottom: 'solid' }}>Minimum requirements</h3>
+        {game.minimumRequirements}
       </div>
       <section style={{ float: 'left' }}>
       </section>
+      </div>
     </Layout>
   )
 }
@@ -55,7 +62,6 @@ query ($slug: String) {
       description
       developmentCost
       developmentTeam
-      fieldGroupName
       metacriticScore
       minimumRequirements
       negatives
