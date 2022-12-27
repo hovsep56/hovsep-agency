@@ -29,7 +29,7 @@ function BasicExample({ pageTitle, children }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={navLinks}>
-            <Link className={navText} to="/homepages">Home</Link>
+            <Link className={navText} to="/">Home</Link>
             <Link className={navText} to="/homepages/about">About</Link>
           </Nav>
         </Navbar.Collapse>

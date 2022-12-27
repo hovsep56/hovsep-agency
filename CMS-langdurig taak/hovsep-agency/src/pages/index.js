@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../../components/layout'
+import Layout from '../components/layout'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import {background,navlinktext,liststyle} from './index.module.css'
 
