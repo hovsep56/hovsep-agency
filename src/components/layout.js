@@ -31,6 +31,7 @@ function BasicExample({ pageTitle, children }) {
           <Nav className={navLinks}>
             <Link className={navText} to="/">Home</Link>
             <Link className={navText} to="/homepages/about">About</Link>
+            <Link className={navText} to="/homepages/contact">Contact</Link>
           </Nav>
         </Navbar.Collapse>
     </Navbar>
