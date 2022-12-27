@@ -10,7 +10,7 @@ const Mainpage = ({ data: { allWpGame: { edges } } }) => {
   return (
     <Layout>
       <div className={background}>
-        <h1 style={{ textAlign: 'center', paddingBottom:20}}>Welcome to my personal Top Ten RPG games</h1>
+        <h1 style={{ textAlign: 'center', paddingBottom:50}}>Welcome to my personal Top Ten RPG games</h1>
         <ul className={liststyle}>
           {edges.map((item) => {
             const game = item.node.gameMeta;
