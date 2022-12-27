@@ -1,17 +1,17 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import {background,navlinktext} from './index.module.css'
+import {background,navlinktext,liststyle} from './index.module.css'
 
 const Mainpage = ({ data: { allWpGame: { edges } } }) => {
   const [count,setcount] =useState(0)
   return (
     <Layout>
       <div className={background}>
-        <h1 style={{ textAlign: 'center'}}>Welcome to my personal Top Ten RPG games</h1>
-        <ul style={{ listStyleType:'decimal',display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+        <h1 style={{ textAlign: 'center', paddingBottom:20}}>Welcome to my personal Top Ten RPG games</h1>
+        <ul className={liststyle}>
           {edges.map((item) => {
             const game = item.node.gameMeta;
             const slug = item.node.slug

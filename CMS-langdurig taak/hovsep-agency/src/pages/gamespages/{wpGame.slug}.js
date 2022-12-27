@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import { node } from 'prop-types'
+import {gameDisplay} from './game.module.css'
 
 const ArtistPage = ({ data: { wpGame: { gameMeta: game } } }) => {
   const image = getImage(game.picture.localFile)
@@ -29,7 +29,7 @@ const ArtistPage = ({ data: { wpGame: { gameMeta: game } } }) => {
 
         </div>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <div className={gameDisplay}>
         <h1 style={{ borderBottom: 'solid' }}>Game details </h1>
         <h2>{game.title}</h2>
         <GatsbyImage image={image} alt={game.picture.altText} style={{ maxHeight: 300, maxWidth: 300 }} />

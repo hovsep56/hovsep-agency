@@ -2,15 +2,15 @@ import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
   container,
-  nav,
   navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle
+  navText,
+  navBar
 } from './layout.module.css'
+import {Container,Nav,Navbar,NavDropdown} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Layout = ({ pageTitle, children }) => {
 
+function BasicExample({ pageTitle, children }) {
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -24,31 +24,23 @@ const Layout = ({ pageTitle, children }) => {
   }`)
 
   return (
-
     <div className={container}>
-      <title> {pageTitle} | {data.site.siteMetadata.title}</title>
-      <nav className={nav}>
-        <header>
-        </header>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link className={navLinkText} to="/">
-              Home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link className={navLinkText} to="/about">
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <main>
+    <Navbar expand='sm' className={navBar}>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className={navLinks}>
+            <Link className={navText} to="/homepages">Home</Link>
+            <Link className={navText} to="/homepages/about">About</Link>
+          </Nav>
+        </Navbar.Collapse>
+    </Navbar>
+    <main>
         <h1>{pageTitle}</h1>
         {children}
       </main>
     </div>
-  )
+  );
 }
 
-export default Layout
+
+export default BasicExample
