@@ -11,7 +11,7 @@ const ArtistPage = ({ data: { wpGame: { gameMeta: game } } }) => {
   return (
 
     <Layout>
-      <div style={{backgroundColor: 'lightgrey',height:'100vh'}}>
+      <div style={{backgroundColor: 'lightgrey',height:'130vh'}}>
       <div style={{ position: 'absolute', paddingLeft: 30 }}>
         <div style={{ border: 'solid', borderColor: 'black', padding: 10 }}>
           <h3 style={{textAlign: 'center',borderBottom: 'solid'}}> Extra details</h3>
@@ -20,10 +20,10 @@ const ArtistPage = ({ data: { wpGame: { gameMeta: game } } }) => {
             <li><text style={{ fontWeight: 'bold' }}>Development cost:</text> {game.developmentCost}</li>
             <li><text style={{ fontWeight: 'bold' }}>development team:</text>  {game.developmentTeam}</li>
             <li><text style={{ fontWeight: 'bold' }}>Metacritic score:</text> {game.metacriticScore}</li>
-            <li><text style={{ fontWeight: 'bold', color: 'green' }}>Positives:</text></li>
-            <li>{game.positives}</li>
+            <li><text style={{ fontWeight: 'bold', color: 'green' }} >Positives:</text></li>
+            <li dangerouslySetInnerHTML={{__html:game.positives}}/>
             <li><text style={{ fontWeight: 'bold', color: 'red' }}>Negatives:</text></li>
-            <li>{game.negatives}</li>
+            <li dangerouslySetInnerHTML={{__html:game.negatives}}/>
           </ul>
 
 
@@ -36,7 +36,7 @@ const ArtistPage = ({ data: { wpGame: { gameMeta: game } } }) => {
         <h3 style={{ borderBottom: 'solid' }}>Description</h3>
         <p style={{ paddingTop: 10 }}>{game.description}</p>
         <h3 style={{ borderBottom: 'solid' }}>Minimum requirements</h3>
-        {game.minimumRequirements}
+        <div dangerouslySetInnerHTML={{__html:game.minimumRequirements}}/>
       </div>
       <section style={{ float: 'left' }}>
       </section>
