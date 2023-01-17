@@ -17,7 +17,6 @@ const Mainpage = ({ data: { allWpGame: { edges } } }) => {
             const slug = item.node.slug
             const image = getImage(game.picture.localFile)
             return (
-              
               <div>
                 <li style={{ paddingBottom: 50, textAlign: 'center' }}>
                 <Link className={navlinktext} to={`/gamespages/${slug}`}>
